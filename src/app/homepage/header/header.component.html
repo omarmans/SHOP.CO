@@ -59,6 +59,7 @@
         <!-- how to add outline -->
         <!--  focus:outline-none focus:ring-2 focus:ring-[#777] focus:border-transparent" -->
         <input
+          *ngIf="showSearch()"
           class="bg-[#F0F0F0] w-full py-3 pl-10 pr-4 rounded-[60px] flex justify-between text-slate-400 trs-5"
           type="search "
           name="search"
@@ -68,9 +69,23 @@
       </div>
     </nav>
     <div class="cart flex items-center justify-center gap-2">
-      <img src="imgs/black-serach-icon.svg" alt="" class="none" />
+      <img
+        src="imgs/black-serach-icon.svg"
+        alt=""
+        class="none"
+        (click)="openSearch()"
+      />
       <img src="imgs/cart-icon.svg" alt="" />
       <img src="imgs/profile-icon.svg" alt="" />
     </div>
   </div>
 </header>
+
+<input
+  *ngIf="showSearch()"
+  class="bg-[#F0F0F0] w-full py-3 pl-10 pr-4 rounded-[60px] flex justify-between text-slate-400 trs-5 none"
+  type="search "
+  name="search"
+  id="search"
+  placeholder="Search for products..."
+/>

@@ -3,13 +3,14 @@ import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   isShown = signal(true);
   isOpened = signal(false);
+  showSearch = signal(false);
   displayNone() {
     this.isShown.set(false);
   }
@@ -17,9 +18,10 @@ export class HeaderComponent {
   openMenu() {
     this.isOpened.update((current: any) => !current);
   }
-  //   openMenu() {
-  //   this.isOpened.set(!this.isOpened());
-  // }
+  openSearch() {
+    this.showSearch.set(!this.showSearch());
+    console.log(this.showSearch());
+  }
 }
 
 //note1: img will hold the transtion
