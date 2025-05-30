@@ -25,6 +25,7 @@ export class HeaderComponent {
   }
   openLinks() {
     this.showLink.update((current: any) => !current);
+    console.log(this.showLink());
   }
 }
 

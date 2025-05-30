@@ -23,7 +23,7 @@
       <div class="logo font-bold text-4xl">SHOP.CO</div>
       <ul
         class="links flex justify-between items-center gap-5"
-        *ngIf="showLink()"
+        [class.show]="showLink()"
       >
         <li class="flex flex-col relative">
           <a href="#" class="flex items-center gap-2" (click)="openMenu()"
