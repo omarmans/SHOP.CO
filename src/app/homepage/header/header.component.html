@@ -11,10 +11,20 @@
 }
 <header>
   <div class="container flex gap-5">
-    <img src="imgs/bar-icon.svg" alt="" class="none w-7" />
-    <nav class="bg-white flex justify-between items-center pt-4 pb-4 flex-1">
+    <img
+      src="imgs/bar-icon.svg"
+      alt=""
+      class="none w-7"
+      (click)="openLinks()"
+    />
+    <nav
+      class="bg-white flex justify-between items-center pt-4 pb-4 flex-1 relative"
+    >
       <div class="logo font-bold text-4xl">SHOP.CO</div>
-      <ul class="links flex justify-between items-center gap-5">
+      <ul
+        class="links flex justify-between items-center gap-5"
+        *ngIf="showLink()"
+      >
         <li class="flex flex-col relative">
           <a href="#" class="flex items-center gap-2" (click)="openMenu()"
             >Shop
@@ -59,7 +69,6 @@
         <!-- how to add outline -->
         <!--  focus:outline-none focus:ring-2 focus:ring-[#777] focus:border-transparent" -->
         <input
-          *ngIf="showSearch()"
           class="bg-[#F0F0F0] w-full py-3 pl-10 pr-4 rounded-[60px] flex justify-between text-slate-400 trs-5"
           type="search "
           name="search"

@@ -11,6 +11,7 @@ export class HeaderComponent {
   isShown = signal(true);
   isOpened = signal(false);
   showSearch = signal(false);
+  showLink = signal(false);
   displayNone() {
     this.isShown.set(false);
   }
@@ -21,6 +22,9 @@ export class HeaderComponent {
   openSearch() {
     this.showSearch.set(!this.showSearch());
     console.log(this.showSearch());
+  }
+  openLinks() {
+    this.showLink.update((current: any) => !current);
   }
 }
 

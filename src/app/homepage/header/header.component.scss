@@ -48,19 +48,33 @@ header {
   .container {
     flex-direction: row;
     align-items: center;
+
     nav {
       flex-direction: row;
+
       .links {
-        display: none;
+        text-align: center;
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        right: 56%; // عدلت من 60% إلى 0 لتظهر القائمة بمحاذاة الجانب الأيمن
+        background-color: #ffffff; // غيرت اللون من أحمر إلى أبيض
+        width: 60%; // يمكنك تعديله حسب ما يناسب التصميم أكثر
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // لإضافة ظل بسيط وجمالي
+        padding: 1rem;
+        border-radius: 0.5rem;
+        z-index: 100;
       }
+
       .serch {
         display: none;
+
         img {
-          // top: 50%;
           top: 0;
           right: 0;
           width: 50px;
         }
+
         input {
           display: none;
         }
